@@ -1,124 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <!-- Google fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google fonts links -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Style link -->
+    <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Style link -->
-  <link rel="stylesheet" href="css/style.css">
+    <title>Frontend Mentor | Pricing component with toggle hub</title>
+  </head>
 
-  <title>Frontend Mentor | Pricing component with toggle hub</title>
-</head>
+  <body>
+    <div class="header">
+      <h1 class="header__title">Our Pricing</h1>
 
-<body>
+      <div class="header__pricing">
+        <div class="header__pricing--text">Annually</div>
 
-  <div class="header">
-    <h1 class="header__title">Our Pricing</h1>
+        <label class="switch">
+          <input type="checkbox" id="switch" />
+          <span class="switch--slider switch--round"></span>
+        </label>
 
-    <div class="header__pricing">
-      <div class="header__pricing--text">
-        Annually
-      </div>
-
-      <label class="switch">
-        <input type="checkbox" id="switch">
-        <span class="switch--slider switch--round"></span>
-      </label>
-
-      <div class="header__pricing--text">
-        Monthly
-      </div>
-    </div>
-  </div>
-
-<section class="section__boxes">
-  <div class="box box__basic">
-    <div class="box__text--grey">
-      <div class="box__text--heading">
-        Basic
-      </div>
-      <div class="box__text--price">
-        <span class="monthly hidden">&dollar;19.99</span>
-        <span class="annually">&dollar;199.99</span>
-      </div>
-      <div class="box__text--facts">
-        500 GB Storage
-      </div>
-      <div class="box__text--facts">
-        2 Users Allowed
-      </div>
-      <div class="box__text--facts">
-        Send up to 3 GB
+        <div class="header__pricing--text">Monthly</div>
       </div>
     </div>
-    <a class="btn btn--dark" href="#">Learn More</a>
-  </div>
 
-  <div class="box box__pro">
-    <div class="box__text--white">
-      <div class="box__text--heading">
-        Professional
+    <section class="section__boxes">
+      <div class="box box__basic">
+        <div class="box__text--grey">
+          <div class="box__text--heading">Basic</div>
+          <div class="box__text--price">
+            <span class="monthly hidden">&dollar;19.99</span>
+            <span class="annually">&dollar;199.99</span>
+          </div>
+          <div class="box__text--facts">500 GB Storage</div>
+          <div class="box__text--facts">2 Users Allowed</div>
+          <div class="box__text--facts">Send up to 3 GB</div>
+        </div>
+        <a class="btn btn--dark" href="#">Learn More</a>
       </div>
-      <div class="box__text--price">
-        <span class="monthly hidden">&dollar;24.99</span>
-        <span class="annually">&dollar;249.99</span>
+
+      <div class="box box__pro">
+        <div class="box__text--white">
+          <div class="box__text--heading">Professional</div>
+          <div class="box__text--price">
+            <span class="monthly hidden">&dollar;24.99</span>
+            <span class="annually">&dollar;249.99</span>
+          </div>
+          <div class="box__text--facts">1 TB Storage</div>
+          <div class="box__text--facts">5 Users Allowed</div>
+          <div class="box__text--facts">Send up to 10 GB</div>
+        </div>
+        <a class="btn btn--light" href="#">Learn More</a>
       </div>
-      <div class="box__text--facts">
-        1 TB Storage
+
+      <div class="box box__master">
+        <div class="box__text--grey">
+          <div class="box__text--heading">Master</div>
+          <div class="box__text--price">
+            <span class="monthly hidden">&dollar;39.99</span>
+            <span class="annually">&dollar;399.99</span>
+          </div>
+          <div class="box__text--facts">2 TB Storage</div>
+          <div class="box__text--facts">10 Users Allowed</div>
+          <div class="box__text--facts">Send up to 20 GB</div>
+        </div>
+        <div class="btn btn--dark">Learn More</div>
       </div>
-      <div class="box__text--facts">
-        5 Users Allowed
-      </div>
-      <div class="box__text--facts">
-        Send up to 10 GB
-      </div>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/KaiBoro" target="_blank"
+        >Kai Borowski</a
+      >.
     </div>
-    <a class="btn btn--light" href="#">Learn More</a>
-  </div>
 
-  <div class="box box__master">
-    <div class="box__text--grey">
-      <div class="box__text--heading">
-        Master
-      </div>
-      <div class="box__text--price">
-        <span class="monthly hidden">&dollar;39.99</span>
-        <span class="annually">&dollar;399.99</span>
-      </div>
-      <div class="box__text--facts">
-        2 TB Storage
-      </div>
-      <div class="box__text--facts">
-        10 Users Allowed
-      </div>
-      <div class="box__text--facts">
-        Send up to 20 GB
-      </div>
-    </div>
-    <div class="btn btn--dark">
-      Learn More
-    </div>
-  </div>
-</section>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Kai Borowski</a>.
-  </div>
-
-
-
-  <!-- JS link -->
-  <script type="text/javascript" src="js/script.js">
-
-  </script>
-</body>
-
+    <!-- JS link -->
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
 </html>

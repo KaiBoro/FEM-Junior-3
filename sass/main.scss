@@ -6,7 +6,7 @@ $color-very-light-grayish-blue: hsl(240, 78%, 98%);
 $color-light-grayish-blue: hsl(234, 14%, 74%);
 $color-grayish-blue: hsl(233, 13%, 49%);
 $color-dark-grayish-blue: hsl(232, 13%, 33%);
-$color-background: #F0F0FF;
+$color-background: #f0f0ff;
 
 // ------ BASIC SETUP ------ //
 *,
@@ -18,20 +18,17 @@ $color-background: #F0F0FF;
 }
 
 html {
-  font-size: 93,75%;
-  /* 15px / 16px (default) => 93,75% / defined what 1rem is */
+  font-size: 93.75%;
+  /* 15px / 16px (default) => 93,75% / defines what 1rem is */
 }
 
 body {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   padding: 5rem 2rem;
   background-color: $color-background;
   letter-spacing: 0.10625rem;
-  background-image: url("../images/bg-top.svg");
-  background-position: 11.875rem -1.875rem;
-  background-repeat: no-repeat;
 }
 
 // Hidden to display annually / monthly prices
@@ -59,14 +56,14 @@ body {
 }
 
 .header__pricing {
+  display: flex;
+  justify-content: center;
   font-size: 1.2rem;
-  text-align: center;
   margin: 3.125rem 0;
-  @include clearfix;
 }
 
 .header__pricing--text {
-  display: inline-block;
+  margin: 0 0.3rem;
   color: $color-light-grayish-blue;
 }
 
@@ -74,8 +71,7 @@ body {
 /* The switch - the box around the slider */
 .switch {
   position: relative;
-  display: inline-block;
-  width: 3.75rem;
+  width: 2.75rem;
   height: 1.5625rem;
   margin: 0 0.3125rem;
 
@@ -95,7 +91,11 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(to right, $color-primary-gradient-light, $color-primary-gradient-dark);
+    background-image: linear-gradient(
+      to right,
+      $color-primary-gradient-light,
+      $color-primary-gradient-dark
+    );
     -webkit-transition: 0.4s;
     transition: 0.4s;
 
@@ -105,7 +105,7 @@ body {
       height: 1.125rem;
       width: 1.125rem;
       left: 0.25rem;
-      bottom: 0.25rem;
+      bottom: 0.22rem;
       background-color: white;
       -webkit-transition: 0.4s;
       transition: 0.4s;
@@ -123,9 +123,9 @@ body {
 
 input {
   &:checked + .switch--slider:before {
-    -webkit-transform: translateX(2.125rem);
-    -ms-transform: translateX(2.125rem);
-    transform: translateX(2.125rem);
+    -webkit-transform: translateX(1.125rem);
+    -ms-transform: translateX(1.125rem);
+    transform: translateX(1.125rem);
   }
 }
 
@@ -143,14 +143,18 @@ input {
   }
 
   &__pro {
-    background-image: linear-gradient(to right bottom, $color-primary-gradient-light, $color-primary-gradient-dark);
+    background-image: linear-gradient(
+      to right bottom,
+      $color-primary-gradient-light,
+      $color-primary-gradient-dark
+    );
   }
 
   &__text {
     &--grey {
       color: $color-grayish-blue;
 
-      & .&--price {
+      & &--price {
         color: hsl(232, 13%, 33%);
       }
     }
@@ -177,7 +181,6 @@ input {
 // ------ BUTTON ------ //
 
 .btn {
-  border: 1px solid transparent;
   padding: 1.25rem 0;
   display: inline-block;
   width: 100%;
@@ -190,20 +193,43 @@ input {
   &--dark {
     position: relative;
     z-index: 1;
-    background-image: linear-gradient(to right, $color-primary-gradient-light, $color-primary-gradient-dark);
+    background-image: linear-gradient(
+      to right,
+      $color-primary-gradient-light,
+      $color-primary-gradient-dark
+    );
     background-repeat: no-repeat;
     color: $color-very-light-grayish-blue;
 
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      background: $color-very-light-grayish-blue;
+      z-index: -1;
+      opacity: 0;
+      border: 1px solid $color-primary-gradient-dark;
+      color: $color-primary-gradient-dark;
+      border-radius: 10px;
+      transition: all 0.4s;
+    }
     &:hover {
-     background-image: linear-gradient(to right, $color-very-light-grayish-blue, $color-very-light-grayish-blue);
-     border: 1px solid $color-primary-gradient-dark;
-     color: $color-primary-gradient-dark;
+      color: $color-primary-gradient-dark;
+    }
+    &:hover:after {
+      left: 0px;
+      top: 0px;
+      opacity: 1;
     }
   }
 
   &--light {
     background-color: $color-very-light-grayish-blue;
     color: $color-primary-gradient-dark;
+    border: 1px solid transparent;
 
     &:hover {
       background-color: transparent;
@@ -225,22 +251,14 @@ input {
 }
 
 // ------ MEDIA QUERIES ------ //
-@media only screen and (min-width: 471px) {
-  body {
-    background-position: 290px -30px;
-  }
-}
-@media only screen and (min-width: 576px) {
-  body {
-    background-position: 471px -30px;
-  }
-}
-@media only screen and (min-width: 681px) {
+
+@media only screen and (min-width: 56.25em) {
   body {
     padding: 4rem 3rem;
-    background-image: url("../images/bg-top.svg"), url("../images/bg-bottom.svg");
+    background-image: url("../images/bg-top.svg"),
+      url("../images/bg-bottom.svg");
     background-repeat: no-repeat, no-repeat;
-    background-position: 576px 0px, 0 500px;
+    background-position: 110% 0, 0 550px;
   }
 
   .box {
@@ -270,7 +288,7 @@ input {
       }
 
       &--price {
-        font-size: 2rem;
+        font-size: 3rem;
       }
     }
   }
@@ -282,33 +300,5 @@ input {
   .btn {
     padding: 0.9375rem 0;
     margin-top: 1.5625rem;
-  }
-}
-@media only screen and (min-width: 818px) {
-  body {
-    background-position: 681px 0px, 0 500px;
-  }
-
-  .box__text--price {
-    font-size: 2.5rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  body {
-    background-position: 818px 0px, 0 500px;
-  }
-
-  .box__text--price {
-    font-size: 3rem;
-  }
-}
-@media only screen and (min-width: 1147px) {
-  body {
-    background-position: 1024px 0px, 0 500px;
-  }
-}
-@media only screen and (min-width: 1400px) {
-  body {
-    background-position: 1147px 0px, 0 500px;
   }
 }
